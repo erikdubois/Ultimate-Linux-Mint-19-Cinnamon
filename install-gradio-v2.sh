@@ -14,14 +14,15 @@
 
 rm -rf /tmp/gradio
 
-sudo apt-get install -y build-essential autoconf automake intltool libsoup2.4-dev
+sudo apt-get install -y build-essential autoconf automake intltool libsoup2.4-dev ninja-build meson sqlite3
 sudo apt-get install -y libjson-glib-dev libgstreamer1.0-dev valac libgstreamer-plugins-base1.0-dev libgtk-3-dev
 sudo apt-get -f install
 git clone https://github.com/haecker-felix/gradio /tmp/gradio
 cd /tmp/gradio
-sh autogen.sh --prefix=/usr
-make
-sudo make install
+meson build .
+cd build
+ninja
+sudo ninja install
 
 rm -rf /tmp/gradio
 

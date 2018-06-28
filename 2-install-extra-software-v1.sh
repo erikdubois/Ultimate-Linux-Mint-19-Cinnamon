@@ -19,7 +19,7 @@ sh install-atom-v*.sh
 
 # Brackets
 
-sh install-brackets-v*.sh
+#sh install-brackets-v*.sh
 
 ###############################################################################################
 
